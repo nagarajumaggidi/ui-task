@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/fontawesome-all.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/mdb.css">
+    <link rel="stylesheet" href="bootstrap/css/style.css">
+    <title>UI fresher task</title>
+</head>
+<style type="text/css">
+    label{
+        color:blue;
+    }
+    span{
+        color:red;
+    }
+</style>
+<body>
+<div class="container">
+<div class="row">
+	<div class="col-sm-12">
+ <form name="myForm" onclick="return myFun()">
+              <div class="form-group">
+                <label for="name">First Name</label>
+        <input class="form-control" type="text" id="name" placeholder="Enter name">
+            </div>
+
+   <div class="form-group">
+                <label for="name">Middle Name</label>
+     <input class="form-control" type="text" id="middlename" placeholder="Enter name">
+            </div>
+               
+               <div class="form-group">
+                <label for="name">Last Name</label>
+                <input class="form-control" type="text" id="name" placeholder="Enter name">
+            </div>
+            <div class="form-group" class="form-inline">
+                <label for="name" >email id</label>
+        <input class="form-control" type="email" id="Email" placeholder="Enter email">
+                
+                <span id="msges"> </span>
+                     </div>
+                        <div class="form-group">
+                <label for="name">Mobile number</label>
+                <input class="form-control" type="number" id="mobilenumber" placeholder="Enter mobile number">
+                <span id="Message"> </span>
+<br>
+            </div>
+       
+            <div class="form-group">
+                <label for="password">Password</label>
+        <input class="form-control" type="password" id="password"  placeholder="Password">
+        <span id="Msg"> </span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">confirm Password</label>
+         <input class="form-control" type="password" id="passwords"  placeholder="re enter Password">
+         <span id="Msgs"> </span>
+            </div>
+<button type="button" class="btn btn-success">Register</button>
+
+
+        </form>
+       </div>
+</div>
+</div>
+
+<script src="bootstrap/js/fontawesome-all.js"></script>
+<script src="bootstrap/js/jquery-3.2.1.min.js"></script>
+<script src="bootstrap/js/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/mdb.min.js"></script>
+</body>
+<script>
+function myFun() {
+    //mobile validation
+    var a = document.getElementById("mobilenumber").value;   
+    
+
+    if(isNaN(a)) {  
+        document.getElementById("Message").innerHTML ="Please Enter Numeric values";
+        return false;
+    }
+
+
+    
+    if(a.length<10) {
+        document.getElementById("Message").innerHTML ="Mobile Number must be 10 digits";
+        return false;
+    }
+    
+    if(a.length>10) {
+        document.getElementById("Message").innerHTML ="Mobile Number must be 10 digits ";
+        return false;
+    }
+    
+    //passwords validation
+    var b = document.getElementById("password").value;   
+    var c = document.getElementById("passwords").value;  
+
+    if(b == "") {  
+        document.getElementById("Msg").innerHTML ="Please Fill Password";
+        return false;
+    }
+    
+    if(b!="123456") {
+        document.getElementById("Msg").innerHTML ="Please enter correct password";
+        return false;
+    }
+    
+
+    if(b.length<6) {
+        document.getElementById("Msg").innerHTML ="Please Enter six characters ";
+        return false;
+    }
+    
+    if(a.length>15) {
+        document.getElementById("Msg").innerHTML ="Please Enter less than 20 characters ";
+        return false;
+    }
+    
+    if(b!=c){
+        document.getElementById("Msgs").innerHTML ="Password Mismatch ";
+        return false;
+    }
+
+
+//email validation
+var d = document.myForm.Email.value;     // user@gmail.com
+    if(d.indexOf('@')<=0) {   //@gmail.com
+        document.getElementById("msges").innerHTML ="Invalid @ position ";
+        return false;
+    }
+   
+    //user@gmail.co
+    if(d.charAt(d.length-3)!='.') {
+        document.getElementById("msges").innerHTML ="Invalid . position ";
+        return false;
+    }
+     if(d!="user"){
+         document.getElementById("msges").innerHTML ="Invalid mail id ";
+        return false;
+     }
+     if(d==""){
+         document.getElementById("msges").innerHTML ="Invalid mail id ";
+        return false;
+     }
+
+
+}
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/fontawesome-all.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/mdb.css">
+    <link rel="stylesheet" href="bootstrap/css/style.css">
+    <title>UI fresher task</title>
+
+
+<style type="text/css">
+    label{
+        color:blue;
+    }
+    span{
+        color:red;
+    }
+</style></head>
+<body>
+<div class="container">
+<div class="row">
+	<div class="col-sm-12 " class="form-inline">
+ <form name="myForm" onsubmit="return myFun()">
+            <div class="form-group" >
+                <label for="name" >Email id</label>
+            <input class="form-control" type="email"   name="Email" placeholder="Enter email">
+            <span id="Message"> </span>
+                     </div>
+       
+          <div class="form-group">
+                <label for="password">Password</label>
+        <input class="form-control" type="password" id="password"  placeholder="Password">
+        <span id="Msg"> </span>
+            </div>
+
+<input type="submit" class="btn btn-success" value="login">
+<a href="reg.html" target="-self"><button type="button" class="btn btn-success">registration</button></a>
+
+        </form>
+       </div>
+</div>
+</div>
+
+<script src="bootstrap/js/fontawesome-all.js"></script>
+<script src="bootstrap/js/jquery-3.2.1.min.js"></script>
+<script src="bootstrap/js/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/mdb.min.js"></script>
+</body>
+
+<script>
+function myFun() {
+	var a = document.myForm.Email.value;     // raju@gmail.com
+	if(a.indexOf('@')<=0) {   //@gmail.com
+		document.getElementById("Message").innerHTML ="Invalid @ position ";
+		return false;
+	}
+	//thapa@gmail.com  
+	if(a.charAt(a.length-4)!='.') {
+		document.getElementById("Message").innerHTML ="Invalid . position ";
+		return false;
+	}
+	
+if(d!="user"){
+         document.getElementById("msges").innerHTML ="Invalid mail id ";
+        return false;
+     }
+     if(d==""){
+         document.getElementById("msges").innerHTML ="Invalid mail id ";
+        return false;
+     }
+ var b = document.getElementById("password").value;   
+if(b == "") {  
+        document.getElementById("Msg").innerHTML ="Please Fill Password";
+        return false;
+    }
+    
+    if(b!="123456") {
+        document.getElementById("Msg").innerHTML ="Please enter correct password";
+        return false;
+    }
+    
+
+ 
+}
+
+</script>
+</html>
